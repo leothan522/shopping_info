@@ -1,2 +1,2 @@
-"# php Android => Caracas Shopping Center" 
+"Caracas Shopping Center" 
 "# shopping_info" 
