@@ -137,12 +137,11 @@ $("#btn_formulario").click(function (e) {
 
 
     if (planPago !== "null" && nivel !== "" && plan !== "" && valNombre && valEmail && valTelefono){
-        //alert("nivel: " + nivel + " | plan: " + plan + " | nombre: " + nombre + " | email: " + email + " | telefono: " + telefono + " | vendedor: " + vendedor + " | Pago: " + planPago );
         Cargando.fire();
         $.ajax({
             type: 'POST',
             url: "http://shopping.test:8080/info/procesar_formulario.php",
-            //url: "http://caracashoppingcenter.com/info/procesar_formulario.php",
+            //url: "http://caracashoppingcenter.info/info/procesar_formulario.php",
             data: {
                 planPlago: planPago,
                 nombre: nombre,
@@ -172,6 +171,8 @@ $("#btn_formulario").click(function (e) {
                 }
             }
         });
+    }else{
+        alert("nivel: " + nivel + " | plan: " + plan + " | nombre: " + nombre + " | email: " + email + " | telefono: " + telefono + " | vendedor: " + vendedor + " | Pago: " + planPago );
     }
 
 });
