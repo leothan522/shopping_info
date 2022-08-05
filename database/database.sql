@@ -24,15 +24,12 @@ CREATE TABLE IF NOT EXISTS `compras` (
   `email` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   `telefono` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   `plan_pago` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
-  `niveles_id` bigint(20) unsigned DEFAULT NULL,
-  `planes_id` bigint(20) unsigned DEFAULT NULL,
-  `vendedores_id` bigint(20) unsigned DEFAULT NULL,
+  `niveles_id` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `planes_id` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `vendedores_id` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fecha` date NOT NULL,
   `band` int(10) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`),
-  KEY `FK_compras_niveles` (`niveles_id`),
-  KEY `FK_compras_planes` (`planes_id`),
-  KEY `FK_compras_vendedores` (`vendedores_id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- Volcando datos para la tabla shopping_info.compras: ~0 rows (aproximadamente)
@@ -47,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `niveles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla shopping_info.niveles: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla shopping_info.niveles: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `niveles` DISABLE KEYS */;
 INSERT INTO `niveles` (`id`, `nombre`, `band`) VALUES
 	(1, 'NIVEL BÁLTICO I', 1),

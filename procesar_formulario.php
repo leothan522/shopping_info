@@ -6,7 +6,7 @@ require "Mailer.php";
 function procesar($planPago, $nombre, $email, $telefono, $vendedor, $nivel, $plan){
     $query = new Query();
     $row = null;
-    $date = date("Y-m-d H:i:s");
+    $date = date("Y-m-d");
 
     //consultamos si ya existe el email
     $existe = "select * from `compras` where `email` = '{$email}'";
@@ -29,9 +29,9 @@ if (isset($_POST['planPlago'])){ $planPago = $_POST['planPlago']; }else{ $planPa
 if (isset($_POST['nombre'])){ $nombre = $_POST['nombre']; }else{ $nombre = null; }
 if (isset($_POST['email'])){ $email = $_POST['email']; }else{ $email = null; }
 if (isset($_POST['telefono'])){ $telefono = $_POST['telefono']; }else{ $telefono = null; }
-if (isset($_POST['vendedor'])){ $vendedor = intval($_POST['vendedor']); }else{ $vendedor = null; }
-if (isset($_POST['nivel'])){ $nivel = intval($_POST['nivel']); }else{ $nivel = null; }
-if (isset($_POST['plan'])){ $plan = intval($_POST['plan']); }else{ $plan = null; }
+if (isset($_POST['vendedor'])){ $vendedor = $_POST['vendedor']; }else{ $vendedor = null; }
+if (isset($_POST['nivel'])){ $nivel = $_POST['nivel']; }else{ $nivel = null; }
+if (isset($_POST['plan'])){ $plan = $_POST['plan']; }else{ $plan = null; }
 
 $compra = procesar($planPago, ucwords($nombre), strtolower($email), $telefono, $vendedor, $nivel, $plan);
 if ($compra){
