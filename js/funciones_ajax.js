@@ -149,7 +149,7 @@ $("#btn_formulario").click(function (e) {
                 telefono: telefono,
                 vendedor: vendedor,
                 nivel: nivel,
-                plan: planPago
+                plan: plan
             },
             success: function (data) {
 
