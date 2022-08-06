@@ -7,6 +7,9 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
             <h3 class="card-title text-purple text-bold">Compras Registradas</h3>
 
             <div class="card-tools">
+                <a href="excel.php" class="btn btn-tool text-success swalDefaultInfo">
+                    <i class="fas fa-file-excel"></i> <i class="fas fa-download"></i>
+                </a>
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
                 </button>
             </div>
@@ -15,9 +18,8 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
         <!-- /.card-header -->
         <div class="card-body">
 
-
-
-            <table class="table">
+            <div class="table-responsive">
+                <table class="table table-hover">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th>
@@ -53,6 +55,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                 <?php } ?>
                 </tbody>
             </table>
+            </div>
 
         </div>
         <!-- /.card-body -->

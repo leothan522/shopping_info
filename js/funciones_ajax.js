@@ -177,6 +177,14 @@ $("#btn_formulario").click(function (e) {
 
 });
 
+$('.swalDefaultInfo').click(function() {
+    Toast.fire({
+        icon: 'info',
+        position: 'center',
+        title: 'Generando Archivo'
+    })
+});
+
 $("#btn_prueba").click(function(e) {
     e.preventDefault();
     //Cargando.fire();
