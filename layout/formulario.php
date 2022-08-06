@@ -181,6 +181,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                     </div>
 
                     <div class="col-md-4">
+                        <input type="hidden" id="url_ajax" value="<?= $url ?>">
                         <button type="button" class="btn btn-block bg-gradient-purple" id="btn_formulario">Comprar</button>
                     </div>
                     <!-- ./row -->

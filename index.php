@@ -1,6 +1,9 @@
 <?php
 require 'vendor/autoload.php';
 require "Query.php";
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+$url = $_ENV['APP_URL'];
 
 function getVendedores(){
     $query = new Query();
@@ -24,7 +27,14 @@ if (is_null($nivel) && is_null($plan)){
     echo $templates->render('error_no_get');
 }else{
     $vendedores = getVendedores();
-    echo $templates->render('formulario', ['nivel' => $nivel, 'plan' => $plan, 'vendedores' => $vendedores]);
+    echo $templates->render(
+        'formulario',
+            [
+                'nivel' => $nivel,
+                'plan' => $plan,
+                'vendedores' => $vendedores,
+                'url' => $url
+            ]);
 
 }
 
