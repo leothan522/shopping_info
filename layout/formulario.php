@@ -23,7 +23,61 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                         <label>1. Plan de pago</label>
                     </div>
 
-                    <div class="col-md-3 col-sm-6 col-12">
+                    <?php if ($precios){ ?>
+                        <?php
+                        $i = 0;
+                        $border = null;
+                        $bg = null;
+                        ?>
+                        <?php foreach ($precios as $precio): ?>
+                            <?php
+                            $i++;
+                            if ($i == 1){
+                                $border = "border-info";
+                                $bg = "bg-info";
+                            }
+                            if ($i == 2){
+                                $border = "border-success";
+                                $bg = "bg-success";
+                            }
+                            if ($i == 3){
+                                $border = "border-warning";
+                                $bg = "bg-warning";
+                            }
+                            if ($i == 4){
+                                $border = "border-danger";
+                                $bg = "bg-danger";
+                            }
+                            ?>
+
+                            <div class="col-md-3 col-sm-6 col-12">
+                                <div class="info-box border <?php echo $border; ?>">
+                            <span class="info-box-icon">
+                                <div class="icheck-primary">
+                                    <input type="radio" id="radioPrimary<?php echo $i;?>" name="plan_pago" value="<?php echo $precio['mes'];?>">
+                                    <label for="radioPrimary<?php echo $i;?>"></label>
+                                </div>
+                            </span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-number"><?php echo $precio['mes'];?></span>
+                                        <?php if ($precio['ahorro']){ ?>
+                                            <del class="info-box-text"><?php echo $precio['precio'];?></del>
+                                            <span class="info-box-text text-bold"><?php echo $precio['pagar_total'];?></span>
+                                            <small class="info-box-text text-xs">mes <?php echo $precio['pago_mes'];?></small>
+                                            <span class="float-right badge <?php echo $bg; ?> navbar-badge text-bold">Ahorra <?php echo $precio['ahorro']?></span>
+                                        <?php }else{ ?>
+                                            <span class="info-box-text"><?php echo $precio['precio'];?></span>
+                                            <span class="info-box-text">&nbsp;</span>
+                                            <small class="info-box-text text-xs">&nbsp;</small>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php endforeach ?>
+                    <?php } ?>
+
+                    <!--<div class="col-md-3 col-sm-6 col-12">
                         <div class="info-box border border-info">
                             <span class="info-box-icon">
                                 <div class="icheck-primary">
@@ -32,7 +86,6 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                 </div>
                             </span>
                             <div class="info-box-content">
-                               <!-- <span class="info-box-text">1 mes</span>-->
                                 <span class="info-box-number">1 mes</span>
                             </div>
                         </div>
@@ -47,7 +100,6 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                 </div>
                             </span>
                             <div class="info-box-content">
-                                <!-- <span class="info-box-text">1 mes</span>-->
                                 <span class="info-box-number">4 mes</span>
                             </div>
                         </div>
@@ -62,7 +114,6 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                 </div>
                             </span>
                             <div class="info-box-content">
-                                <!-- <span class="info-box-text">1 mes</span>-->
                                 <span class="info-box-number">6 mes</span>
                             </div>
                         </div>
@@ -77,14 +128,13 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                 </div>
                             </span>
                             <div class="info-box-content">
-                                <!-- <span class="info-box-text">1 mes</span>-->
                                 <span class="info-box-number">
                                     12 mes
                                     <span class="float-right badge bg-danger navbar-badge text-bold">Ahorra 45%</span>
                                 </span>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
 
                     <!-- ./row -->
                 </div>
