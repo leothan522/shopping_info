@@ -1,7 +1,7 @@
 <?php
 $this->layout('master', ['title' => 'Fomulario']) ?>
 
-<div class="col-md-10" id="div_formulario">
+<div class="col-md-11" id="div_formulario">
     <div class="card card-outline card-purple" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
         <div class="card-header">
             <h3 class="card-title text-purple text-bold">¡Ya casi lo logras! Completa tu pedido</h3>
