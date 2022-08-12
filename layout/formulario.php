@@ -67,7 +67,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                         <?php }else{ ?>
                                             <span class="info-box-text text-bold text-primary text-lg"><?php echo $precio['precio'];?></span>
                                         <?php } ?>
-                                        <small class="info-box-text text-xs">+ <?php echo $preventa; ?> por firma (pago único)</small>
+                                        <small class="info-box-text text-xs">+ <?php echo $preventa; ?> por firma (contrato)</small>
                                     </div>
                                 </div>
                             </div>
