@@ -57,6 +57,7 @@ $("#btn_formulario").click(function (e) {
     var valNombre;
     var valEmail;
     var valTelefono;
+    var valTerminos;
     let planPago;
     let radio = document.querySelector('input[name=plan_pago]:checked');
     let nivel = document.getElementById('nivel').value;
@@ -71,13 +72,22 @@ $("#btn_formulario").click(function (e) {
         planPago = "null"
     }
 
+    if (document.getElementById('exampleCheck1').checked)
+    {
+        valTerminos = true;
+        setClass('error_terminos');
+    }else {
+        valTerminos = false;
+        setClass('error_terminos', 'remove');
+    }
+
     if (planPago === "null"){
         Alerta.fire({
             icon: "warning",
             title: "Elige Plan de Pago",
             text: "Debes elegir alguno de nuestros planes de pago",
         });
-    }else if (nombre === "" || email === "" || telefono === "") {
+    }else if (nombre === "" || email === "" || telefono === "" || !valTerminos) {
         Toast.fire({
             icon: "error",
             title: "Todos los campos son requeridos.",
@@ -136,7 +146,7 @@ $("#btn_formulario").click(function (e) {
     }
 
 
-    if (planPago !== "null" && nivel !== "" && plan !== "" && valNombre && valEmail && valTelefono){
+    if (planPago !== "null" && nivel !== "" && plan !== "" && valNombre && valEmail && valTelefono && valTerminos){
         Cargando.fire();
         let url_ajax = document.getElementById('url_ajax').value;
         $.ajax({

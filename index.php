@@ -19,6 +19,18 @@ function getPrecios($plan){
     return $rows;
 }
 
+function getPlan($id){
+    $query = new Query();
+    $sql = "SELECT * FROM `planes` WHERE `id` = $id;";
+    $rows = $query->getFirst($sql);
+    if ($rows){
+        $precio = $rows['precio_firma'];
+    }else{
+        $precio = null;
+    }
+    return $precio;
+}
+
 // Create new Plates instance
 $templates = new League\Plates\Engine('layout');
 
@@ -35,6 +47,7 @@ if (is_null($nivel) && is_null($plan)){
 }else{
     $vendedores = getVendedores();
     $precios = getPrecios($plan);
+    $preventa = getPlan($plan);
     echo $templates->render(
         'formulario',
             [
@@ -42,6 +55,7 @@ if (is_null($nivel) && is_null($plan)){
                 'plan' => $plan,
                 'vendedores' => $vendedores,
                 'precios' => $precios,
+                'preventa' => $preventa,
                 'url' => $url
             ]);
 
