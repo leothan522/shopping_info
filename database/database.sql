@@ -58,6 +58,7 @@ INSERT INTO `niveles` (`id`, `nombre`, `band`) VALUES
 CREATE TABLE IF NOT EXISTS `planes` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `tipo` varchar(60) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `precio_firma` varchar(60) COLLATE utf8_spanish_ci DEFAULT NULL,
   `marketing` text COLLATE utf8_spanish_ci,
   `design` text COLLATE utf8_spanish_ci,
   `promocion_calle` text COLLATE utf8_spanish_ci,
@@ -72,16 +73,16 @@ CREATE TABLE IF NOT EXISTS `planes` (
 
 -- Volcando datos para la tabla shopping_info.planes: ~9 rows (aproximadamente)
 /*!40000 ALTER TABLE `planes` DISABLE KEYS */;
-INSERT INTO `planes` (`id`, `tipo`, `marketing`, `design`, `promocion_calle`, `promocion_digital`, `capacidad`, `niveles_id`, `band`) VALUES
-	(1, 'Mini tienda Estandar', 'Revisión 1 Propuesta  ', 'Revisión 1 Propuesta  ', '1 evento Material gráfico y muestra de productos e insumos por cuenta del locatario.', '1 Promoción mensual digital', '1 - 5', 1, 1),
-	(2, 'Mini tienda Medium', 'Evaluación de estrategia 2 propuestas comercializacion 1 propuesta de promoción ', 'Revisión y Evaluación de imagen 2 propuestas  1 refrescamiento Logo  ', '2 eventos en corredores de consumo Material gráfico y muestra de productos e insumos por cuenta del locatario.', '2 Promoción mensual en plataformas digital', '8 -12', 1, 1),
-	(3, 'Mini tienda Premium', 'Evaluación de estrategia 3 propuestas comercializacion 2 propuesta de promoción ', 'Revisión y Evaluación  3 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '14 - 20', 1, 1),
-	(4, 'Tiendas Medium', 'Revisión y Evaluación  2 propuestas  1 propuesta de promoción ', 'Revisión Evaluación  2 propuestas 1 refrescamiento Logo  ', '2 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '2 Promoción mensual digital', '22 - 30', 2, 1),
-	(5, 'Tiendas Premium', 'Revisión Evaluación 4 propuestas 3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '32 - 40', 2, 1),
-	(6, 'Tiendas Medium', 'Revisión Evaluación  2 propuestas  1 propuesta de promoción ', 'Revisión Evaluación  2 propuestas 1 refrescamiento Logo  ', '2 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '2 Promoción mensual digital', '44 - 50', 3, 1),
-	(7, 'Tiendas  Premium', 'Revisión Evaluación  4 propuestas  3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '55 - 70', 3, 1),
-	(8, 'Tiendas  Premium', 'Revisión Evaluación  4 propuestas  3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '150 -250', 4, 1),
-	(9, 'Tienda Especializada AAA', 'Revisión Evaluación  4 propuestas  3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', 'Todos los  evento  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '300 -400', 5, 1);
+INSERT INTO `planes` (`id`, `tipo`, `precio_firma`, `marketing`, `design`, `promocion_calle`, `promocion_digital`, `capacidad`, `niveles_id`, `band`) VALUES
+	(1, 'Mini tienda Estandar', '$162', 'Revisión 1 Propuesta  ', 'Revisión 1 Propuesta  ', '1 evento Material gráfico y muestra de productos e insumos por cuenta del locatario.', '1 Promoción mensual digital', '1 - 5', 1, 1),
+	(2, 'Mini tienda Medium', '$270', 'Evaluación de estrategia 2 propuestas comercializacion 1 propuesta de promoción ', 'Revisión y Evaluación de imagen 2 propuestas  1 refrescamiento Logo  ', '2 eventos en corredores de consumo Material gráfico y muestra de productos e insumos por cuenta del locatario.', '2 Promoción mensual en plataformas digital', '8 -12', 1, 1),
+	(3, 'Mini tienda Premium', '$387', 'Evaluación de estrategia 3 propuestas comercializacion 2 propuesta de promoción ', 'Revisión y Evaluación  3 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '14 - 20', 1, 1),
+	(4, 'Tiendas Medium', '$486', 'Revisión y Evaluación  2 propuestas  1 propuesta de promoción ', 'Revisión Evaluación  2 propuestas 1 refrescamiento Logo  ', '2 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '2 Promoción mensual digital', '22 - 30', 2, 1),
+	(5, 'Tiendas Premium', '$549', 'Revisión Evaluación 4 propuestas 3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '32 - 40', 2, 1),
+	(6, 'Tiendas Medium', '$648', 'Revisión Evaluación  2 propuestas  1 propuesta de promoción ', 'Revisión Evaluación  2 propuestas 1 refrescamiento Logo  ', '2 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '2 Promoción mensual digital', '44 - 50', 3, 1),
+	(7, 'Tiendas  Premium', '$765', 'Revisión Evaluación  4 propuestas  3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '55 - 70', 3, 1),
+	(8, 'Tiendas  Premium', '$900', 'Revisión Evaluación  4 propuestas  3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', '3 eventos  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '150 -250', 4, 1),
+	(9, 'Tienda Especializada AAA', '$3.600', 'Revisión Evaluación  4 propuestas  3 propuesta de promoción', 'Revisión Evaluación  4 propuestas 1 refrescamiento Logo. 1 refrescamiento Imagen ', 'Todos los  evento  Material gráfico y muestra de productos e insumos por cuenta del locatario.', '3 Promoción mensual digital', '300 -400', 5, 1);
 /*!40000 ALTER TABLE `planes` ENABLE KEYS */;
 
 -- Volcando estructura para tabla shopping_info.precios
@@ -98,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `precios` (
   CONSTRAINT `FK_precios_planes` FOREIGN KEY (`planes_id`) REFERENCES `planes` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
--- Volcando datos para la tabla shopping_info.precios: ~36 rows (aproximadamente)
+-- Volcando datos para la tabla shopping_info.precios: ~34 rows (aproximadamente)
 /*!40000 ALTER TABLE `precios` DISABLE KEYS */;
 INSERT INTO `precios` (`id`, `planes_id`, `mes`, `precio`, `ahorro`, `pagar_total`, `pago_mes`) VALUES
 	(1, 1, '1 mes', '$60,00', NULL, '$60,00', '$60,00'),
