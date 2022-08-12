@@ -1,7 +1,7 @@
 <?php
 $this->layout('master', ['title' => 'Fomulario']) ?>
 
-<div class="col-md-9" id="div_formulario">
+<div class="col-md-10" id="div_formulario">
     <div class="card card-outline card-purple" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
         <div class="card-header">
             <h3 class="card-title text-purple text-bold">¡Ya casi lo logras! Completa tu pedido</h3>
@@ -62,10 +62,10 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                         <span class="info-box-number"><?php echo $precio['mes'];?></span>
                                         <?php if ($precio['ahorro']){ ?>
                                             <!--<del class="info-box-text"><?php /*echo $precio['precio'];*/?></del>-->
-                                            <span class="info-box-text text-bold text-primary">mes <?php echo $precio['pago_mes'];?></span>
+                                            <span class="info-box-text text-bold text-primary text-lg">mes <?php echo $precio['pago_mes'];?></span>
                                             <span class="float-right badge <?php echo $bg; ?> navbar-badge text-bold">Ahorra <?php echo $precio['ahorro']?></span>
                                         <?php }else{ ?>
-                                            <span class="info-box-text text-bold text-primary"><?php echo $precio['precio'];?></span>
+                                            <span class="info-box-text text-bold text-primary text-lg"><?php echo $precio['precio'];?></span>
                                         <?php } ?>
                                         <small class="info-box-text text-xs">+ <?php echo $preventa; ?> por firma (pago único)</small>
                                     </div>
