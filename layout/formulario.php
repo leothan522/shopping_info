@@ -353,7 +353,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
     <!-- /.card -->
 </div>
 
-<div class="col-md-3 d-none" id="div_procesado">
+<div class="col-md-4 d-none" id="div_procesado">
     <div class="info-box mb-3 bg-success">
         <span class="info-box-icon">
             <i class="far fa-thumbs-up"></i>
