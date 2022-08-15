@@ -63,7 +63,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                         <?php if ($precio['ahorro']){ ?>
                                             <!--<del class="info-box-text"><?php /*echo $precio['precio'];*/?></del>-->
                                             <span class="info-box-text text-bold text-primary text-lg">mes <?php echo $precio['pago_mes'];?></span>
-                                            <span class="float-right badge <?php echo $bg; ?> navbar-badge text-bold">Ahorra <?php echo $precio['ahorro']?></span>
+                                            <span class="float-right badge <?php echo $bg; ?> navbar-badge text-bold text-lg">Ahorra <?php echo $precio['ahorro']?></span>
                                         <?php }else{ ?>
                                             <span class="info-box-text text-bold text-primary text-lg"><?php echo $precio['precio'];?></span>
                                         <?php } ?>
