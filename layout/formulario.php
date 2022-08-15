@@ -2,14 +2,14 @@
 $this->layout('master', ['title' => 'Fomulario']) ?>
 
 <div class="col-md-12" id="div_formulario">
-    <div class="card card-outline card-purple" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
+    <div class="card card-outline card-purple maximized-card" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
         <div class="card-header">
             <h3 class="card-title text-purple text-bold">¡Ya casi lo logras! Completa tu pedido</h3>
 
-            <div class="card-tools">
+            <!--<div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i class="fas fa-expand"></i>
                 </button>
-            </div>
+            </div>-->
             <!-- /.card-tools -->
         </div>
         <!-- /.card-header -->
