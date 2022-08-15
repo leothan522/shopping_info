@@ -14,7 +14,7 @@ function procesar($planPago, $cedula, $nombre, $email, $telefono, $vendedor, $ni
         return false;
     }
 
-    $sql = "INSERT INTO `shopping_info`.`compras` (`cedula`, `nombre`, `email`, `telefono`, `plan_pago`, `niveles_id`, `planes_id`, `vendedores_id`, `fecha`, `representante`, `registro`, `numero`, `tomo`, `year`) 
+    $sql = "INSERT INTO `compras` (`cedula`, `nombre`, `email`, `telefono`, `plan_pago`, `niveles_id`, `planes_id`, `vendedores_id`, `fecha`, `representante`, `registro`, `numero`, `tomo`, `year`) 
             VALUES ('{$cedula}', '{$nombre}', '{$email}', '{$telefono}', '{$planPago}', '{$nivel}', '{$plan}', '{$vendedor}', '$date', '{$representante}', '{$registro}', '{$numero}', '{$tomo}', '{$year}');";
     $query->save($sql);
     $row = $query->getFirst($existe);
