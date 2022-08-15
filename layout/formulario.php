@@ -62,12 +62,14 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                                         <span class="info-box-number"><?php echo $precio['mes'];?></span>
                                         <?php if ($precio['ahorro']){ ?>
                                             <!--<del class="info-box-text"><?php /*echo $precio['precio'];*/?></del>-->
-                                            <span class="info-box-text text-bold text-primary text-lg">mes <?php echo $precio['pago_mes'];?></span>
+                                            <span class="info-box-text text-bold text-primary text-lg"><?php echo $precio['pago_mes'];?></span>
+                                            <small class="info-box-text text-xs">mes</small>
                                             <span class="float-right badge <?php echo $bg; ?> navbar-badge text-bold text-lg">Ahorra <?php echo $precio['ahorro']?></span>
                                         <?php }else{ ?>
                                             <span class="info-box-text text-bold text-primary text-lg"><?php echo $precio['precio'];?></span>
+                                            <small class="info-box-text text-xs">&nbsp;</small>
                                         <?php } ?>
-                                        <small class="info-box-text text-xs">+ <?php echo $preventa; ?> por firma (contrato)</small>
+                                        <small class="info-box-text text-xs">+ <?php echo $preventa; ?> por firma (pago único)</small>
                                     </div>
                                 </div>
                             </div>
@@ -143,14 +145,29 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                         <label>2. Datos para la cuenta</label>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-id-card"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Cedula o RIF" id="cedula">
+                            <span class="col-sm-12 text-sm text-danger d-none" id="error_cedula">
+                                <i class="icon fas fa-exclamation-triangle"></i>
+                                <span id="span_cedula"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
                                     <i class="fa fa-user"></i>
                                 </span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+                            <input type="text" class="form-control" placeholder="Nombre o Razón social" id="nombre">
                             <span class="col-sm-12 text-sm text-danger d-none" id="error_nombre">
                                 <i class="icon fas fa-exclamation-triangle"></i>
                                 <span id="span_nombre"></span>
@@ -158,7 +175,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -173,7 +190,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                         </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">
@@ -187,6 +204,86 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                             </span>
                         </div>
                     </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-id-card-alt"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Representante legal (opcional)" id="representante">
+                            <span class="col-sm-12 text-sm text-danger d-none" id="error_representante">
+                                <i class="icon fas fa-exclamation-triangle"></i>
+                                <span id="span_representante"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-passport"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Registro (opcional)" id="registro">
+                            <span class="col-sm-12 text-sm text-danger d-none" id="error_registro">
+                                <i class="icon fas fa-exclamation-triangle"></i>
+                                <span id="span_registro"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 row">
+
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-hashtag"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Numero" id="numero">
+                                <span class="col-sm-12 text-sm text-danger d-none" id="error_numero">
+                                    <i class="icon fas fa-exclamation-triangle"></i>
+                                    <span id="span_numero"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-hashtag"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Tomo" id="tomo">
+                                <span class="col-sm-12 text-sm text-danger d-none" id="error_tomo">
+                                    <i class="icon fas fa-exclamation-triangle"></i>
+                                    <span id="span_tomo"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-hashtag"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Año" id="year">
+                                <span class="col-sm-12 text-sm text-danger d-none" id="error_year">
+                                    <i class="icon fas fa-exclamation-triangle"></i>
+                                    <span id="span_year"></span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
 
 
                     <!-- ./row -->

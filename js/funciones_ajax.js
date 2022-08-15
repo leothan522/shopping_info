@@ -54,6 +54,7 @@ function setClass(id, option = "add", clase = "d-none"){
 $("#btn_formulario").click(function (e) {
     e.preventDefault();
     //Cargando.fire();
+    var valCedula;
     var valNombre;
     var valEmail;
     var valTelefono;
@@ -62,10 +63,16 @@ $("#btn_formulario").click(function (e) {
     let radio = document.querySelector('input[name=plan_pago]:checked');
     let nivel = document.getElementById('nivel').value;
     let plan = document.getElementById('plan').value;
+    let cedula = document.getElementById('cedula').value;
     let nombre = document.getElementById('nombre').value;
     let email = document.getElementById('email').value;
     let telefono = document.getElementById('telefono').value;
     let vendedor = document.getElementById('vendedor').value;
+    let representante = document.getElementById('representante').value;
+    let registro = document.getElementById('registro').value;
+    let numero = document.getElementById('numero').value;
+    let tomo = document.getElementById('tomo').value;
+    let year = document.getElementById('year').value;
     if (radio){
         planPago = radio.value
     }else {
@@ -90,14 +97,32 @@ $("#btn_formulario").click(function (e) {
     }else if (nombre === "" || email === "" || telefono === "" || !valTerminos) {
         Toast.fire({
             icon: "error",
-            title: "Todos los campos son requeridos.",
+            title: "Algunos campos son requeridos.",
         });
+    }
+
+
+    let spanCedula = document.getElementById('span_cedula');
+    if (cedula === ""){
+        valCedula = false;
+        spanCedula.innerText = "El campo Cedula o RIF es requerido";
+        setClass('error_cedula', 'remove');
+    } else {
+        if (nombre.length >= 4){
+            valCedula = true;
+            setClass('error_cedula');
+        }else{
+            valCedula= false;
+            spanCedula.innerText = "la Cedula o RIF debe tener al menos 7 caracteres";
+            setClass('error_cedula', 'remove');
+        }
+
     }
 
     let spanNombre = document.getElementById('span_nombre');
     if (nombre === ""){
         valNombre = false;
-        spanNombre.innerText = "El campo nombre es requerido";
+        spanNombre.innerText = "El campo nombre o razon social es requerido";
         setClass('error_nombre', 'remove');
     } else {
         if (nombre.length >= 4){
@@ -105,7 +130,7 @@ $("#btn_formulario").click(function (e) {
             setClass('error_nombre');
         }else{
             valNombre = false;
-            spanNombre.innerText = "El nombre debe tener al menos 4 caracteres";
+            spanNombre.innerText = "El nombre o razon social debe tener al menos 4 caracteres";
             setClass('error_nombre', 'remove');
         }
 
@@ -146,7 +171,7 @@ $("#btn_formulario").click(function (e) {
     }
 
 
-    if (planPago !== "null" && nivel !== "" && plan !== "" && valNombre && valEmail && valTelefono && valTerminos){
+    if (planPago !== "null" && nivel !== "" && plan !== "" && valCedula && valNombre && valEmail && valTelefono && valTerminos){
         Cargando.fire();
         let url_ajax = document.getElementById('url_ajax').value;
         $.ajax({
@@ -154,12 +179,18 @@ $("#btn_formulario").click(function (e) {
             url: url_ajax + "procesar_formulario.php",
             data: {
                 planPlago: planPago,
+                cedula: cedula,
                 nombre: nombre,
                 email: email,
                 telefono: telefono,
                 vendedor: vendedor,
                 nivel: nivel,
-                plan: plan
+                plan: plan,
+                representante: representante,
+                registro: registro,
+                numero: numero,
+                tomo: tomo,
+                year: year
             },
             success: function (data) {
 

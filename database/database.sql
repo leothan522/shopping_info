@@ -20,6 +20,7 @@ USE `shopping_info`;
 -- Volcando estructura para tabla shopping_info.compras
 CREATE TABLE IF NOT EXISTS `compras` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `cedula` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `nombre` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
   `telefono` varchar(60) COLLATE utf8_spanish_ci NOT NULL,
@@ -28,6 +29,11 @@ CREATE TABLE IF NOT EXISTS `compras` (
   `planes_id` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `vendedores_id` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `fecha` date NOT NULL,
+  `representante` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `registro` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `numero` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `tomo` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `year` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `band` int(10) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
