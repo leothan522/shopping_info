@@ -325,7 +325,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
                                 <label class="col-md-12 custom-control-label" for="exampleCheck1">
-                                    Estoy de acuerdo con los<a href="#" target="_blank"> términos de servicio.</a>
+                                    Estoy de acuerdo con los<a href="http://caracashoppingcenter.info/wp/contrato/" target="_blank"> términos de servicio.</a>
                                 </label>
                                 <span class="col-sm-12 text-sm text-danger d-none" id="error_terminos">
                                     <i class="icon fas fa-exclamation-triangle"></i>
