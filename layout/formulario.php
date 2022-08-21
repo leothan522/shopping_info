@@ -325,7 +325,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
                                 <label class="col-md-12 custom-control-label" for="exampleCheck1">
-                                    Estoy de acuerdo con los<a href="http://caracashoppingcenter.info/wp/contrato/" target="_blank"> términos de servicio.</a>
+                                    Estoy de acuerdo con los términos de servicio. (<a href="http://caracashoppingcenter.info/wp/contrato/" target="_blank">ver contrato</a>)
                                 </label>
                                 <span class="col-sm-12 text-sm text-danger d-none" id="error_terminos">
                                     <i class="icon fas fa-exclamation-triangle"></i>
@@ -365,5 +365,10 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
             <span class="info-box-number">Te contactaremos en breve.</span>
         </div>
         <!-- /.info-box-content -->
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <a href="http://caracashoppingcenter.info" class="btn btn-block bg-gradient-purple">Cerrar</a>
+        </div>
     </div>
 </div>
