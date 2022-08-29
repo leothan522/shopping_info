@@ -145,6 +145,17 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                         <label>2. Datos para la cuenta</label>
                     </div>
 
+                    <div class="col-md-12 form-group ml-3">
+                        <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" id="customRadio1" name="customRadio" checked="" value="Persona Natural">
+                            <label for="customRadio1" class="custom-control-label">Persona Natural</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" id="customRadio2" name="customRadio" value="Persona Juridica">
+                            <label for="customRadio2" class="custom-control-label">Persona Jur&iacute;dica</label>
+                        </div>
+                    </div>
+
                     <div class="col-md-3">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">

@@ -5,7 +5,7 @@ $dotenv->load();
 require "Query.php";
 require "Mailer.php";
 
-function procesar($planPago, $cedula, $nombre, $email, $telefono, $vendedor, $nivel, $plan, $representante, $registro, $numero, $tomo, $year){
+function procesar($planPago, $cedula, $nombre, $email, $telefono, $vendedor, $nivel, $plan, $representante, $registro, $numero, $tomo, $year, $persona = "Persona Natural"){
     $query = new Query();
     $row = null;
     $date = date("Y-m-d");
@@ -16,8 +16,8 @@ function procesar($planPago, $cedula, $nombre, $email, $telefono, $vendedor, $ni
         return false;
     }
 
-    $sql = "INSERT INTO `compras` (`cedula`, `nombre`, `email`, `telefono`, `plan_pago`, `niveles_id`, `planes_id`, `vendedores_id`, `fecha`, `representante`, `registro`, `numero`, `tomo`, `year`) 
-            VALUES ('{$cedula}', '{$nombre}', '{$email}', '{$telefono}', '{$planPago}', '{$nivel}', '{$plan}', '{$vendedor}', '$date', '{$representante}', '{$registro}', '{$numero}', '{$tomo}', '{$year}');";
+    $sql = "INSERT INTO `compras` (`cedula`, `nombre`, `email`, `telefono`, `plan_pago`, `niveles_id`, `planes_id`, `vendedores_id`, `fecha`, `representante`, `registro`, `numero`, `tomo`, `year`, `persona`) 
+            VALUES ('{$cedula}', '{$nombre}', '{$email}', '{$telefono}', '{$planPago}', '{$nivel}', '{$plan}', '{$vendedor}', '$date', '{$representante}', '{$registro}', '{$numero}', '{$tomo}', '{$year}', '{$persona}');";
     $query->save($sql);
     $row = $query->getFirst($existe);
     return $row;
@@ -47,8 +47,9 @@ if (isset($_POST['registro'])){ $registro = $_POST['registro']; }else{ $registro
 if (isset($_POST['numero'])){ $numero = $_POST['numero']; }else{ $numero = null; }
 if (isset($_POST['tomo'])){ $tomo = $_POST['tomo']; }else{ $tomo = null; }
 if (isset($_POST['year'])){ $year = $_POST['year']; }else{ $year = null; }
+if (isset($_POST['persona'])){ $persona = $_POST['persona']; }else{ $persona = null; }
 
-$compra = procesar($planPago, strtoupper($cedula), ucwords($nombre), strtolower($email), $telefono, $vendedor, $nivel, $plan, $representante, $registro, $numero, $tomo, $year);
+$compra = procesar($planPago, strtoupper($cedula), ucwords($nombre), strtolower($email), $telefono, $vendedor, $nivel, $plan, $representante, $registro, $numero, $tomo, $year, $persona);
 if ($compra){
     $json['success'] = true;
     $json['type'] = "success";

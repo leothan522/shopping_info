@@ -1,7 +1,7 @@
 <?php
 $this->layout('master', ['title' => 'Fomulario']) ?>
 
-<div class="col-md-10">
+<div class="col-md-11">
     <div class="card card-outline card-purple" style="height: inherit; width: inherit; transition: all 0.15s ease 0s;">
         <div class="card-header">
             <h3 class="card-title text-purple text-bold">Compras Registradas</h3>
@@ -23,7 +23,8 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Cedula o RIF</th>
+                    <th scope="col">Nombre o Razón social</th>
                     <th scope="col">Email</th>
                     <th scope="col">Telefono</th>
                     <th scope="col">Plan de Pago</th>
@@ -38,6 +39,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                     <?php foreach ($compras as $compra): ?>
                         <tr>
                             <th scope="row" class="text-center"><?= $compra['id'] ?></th>
+                            <td><?= $compra['cedula'] ?></td>
                             <td><?= $compra['nombre'] ?></td>
                             <td><?= $compra['email'] ?></td>
                             <td><?= $compra['telefono'] ?></td>
@@ -50,7 +52,7 @@ $this->layout('master', ['title' => 'Fomulario']) ?>
                     <?php endforeach; ?>
                 <?php }else{ ?>
                         <tr>
-                            <td colspan="9">Sin Registros</td>
+                            <td colspan="10">Sin Registros</td>
                         </tr>
                 <?php } ?>
                 </tbody>

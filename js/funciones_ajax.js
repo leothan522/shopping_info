@@ -61,6 +61,7 @@ $("#btn_formulario").click(function (e) {
     var valTerminos;
     let planPago;
     let radio = document.querySelector('input[name=plan_pago]:checked');
+    let persona = document.querySelector('input[name=customRadio]:checked').value;
     let nivel = document.getElementById('nivel').value;
     let plan = document.getElementById('plan').value;
     let cedula = document.getElementById('cedula').value;
@@ -190,7 +191,8 @@ $("#btn_formulario").click(function (e) {
                 registro: registro,
                 numero: numero,
                 tomo: tomo,
-                year: year
+                year: year,
+                persona: persona
             },
             success: function (data) {
 
