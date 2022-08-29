@@ -880,6 +880,18 @@ if ($compra){
             <tr>
                 <td>
                     <div class="text" style="padding: 0 2.5em; text-align: left;">
+                        <h3><em style="color: #6f42c1 !important;">Tipo: </em></h3>
+                    </div>
+                </td>
+                <td>
+                    <div class="text" style="padding: 0 2.5em; text-align: left;">
+                        <h3>'.strtoupper($persona).'</h3>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text" style="padding: 0 2.5em; text-align: left;">
                         <h3><em style="color: #6f42c1 !important;">Representante legal: </em></h3>
                     </div>
                 </td>
