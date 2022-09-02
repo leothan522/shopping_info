@@ -14,7 +14,7 @@
 
 
 -- Volcando estructura de base de datos para shopping_info
-CREATE DATABASE IF NOT EXISTS `shopping_info` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci */;
+CREATE DATABASE IF NOT EXISTS `shopping_info` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish2_ci */;
 USE `shopping_info`;
 
 -- Volcando estructura para tabla shopping_info.compras
@@ -34,12 +34,15 @@ CREATE TABLE IF NOT EXISTS `compras` (
   `numero` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `tomo` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `year` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `persona` varchar(50) COLLATE utf8_spanish_ci DEFAULT NULL,
   `band` int(10) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- Volcando datos para la tabla shopping_info.compras: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `compras` DISABLE KEYS */;
+INSERT INTO `compras` (`id`, `cedula`, `nombre`, `email`, `telefono`, `plan_pago`, `niveles_id`, `planes_id`, `vendedores_id`, `fecha`, `representante`, `registro`, `numero`, `tomo`, `year`, `persona`, `band`) VALUES
+	(1, '20025623', 'Yonathan Castillo', 'leothan522@gmail.com', '04243386600', '6 meses', '1', '2', '', '2022-08-29', 'yonathan castillo', 'registro', '25', '2', '2022', 'Persona Natural', 1);
 /*!40000 ALTER TABLE `compras` ENABLE KEYS */;
 
 -- Volcando estructura para tabla shopping_info.niveles
